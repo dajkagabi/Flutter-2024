@@ -16,6 +16,13 @@ class MyApp extends StatelessWidget {
       //debugShowCheckedModeBanner: false,
       home: Scaffold(
         backgroundColor: Colors.yellow[50],
+        appBar: AppBar(
+          title: Text("Ez egy AppBar"),
+          backgroundColor: Colors.yellow[200],
+          elevation: 0,
+          leading: Icon(Icons.menu),
+          actions: [IconButton(onPressed: () {}, icon: Icon(Icons.logout))],
+        ),
         body: Center(
           child: Container(
             height: 300,
@@ -26,13 +33,9 @@ class MyApp extends StatelessWidget {
               borderRadius: BorderRadius.circular(20),
             ),
             padding: EdgeInsets.all(25),
-            child: Text(
-              "Tutorial",
-              style: TextStyle(
-                color: Colors.black,
-                fontSize: 18,
-                fontWeight: FontWeight.bold,
-              ),
+            child: Icon(
+              Icons.home,
+              size: 45,
             ),
           ),
         ),
