@@ -10,6 +10,8 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
+  // List names = ["Narancs", "Banán", "Alma", "Cseresznye", "Citrom", "Kiwi", "Avokádó", "Ananász", "Mangó", "Lime", "Málna"];
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -23,27 +25,11 @@ class MyApp extends StatelessWidget {
           leading: Icon(Icons.menu),
           actions: [IconButton(onPressed: () {}, icon: Icon(Icons.logout))],
         ),
-        body: Row(
-          children: [
-            //1 box
-            Container(
-              width: 260,
-              color: Colors.green[300],
-            ),
-
-            //2 box
-            Container(
-              width: 260,
-              color: Colors.green[200],
-            ),
-
-            //3 box
-            Container(
-              width: 260,
-              color: Colors.green[100],
-            ),
-          ],
-        ),
+        body: ListView.builder(
+            itemCount: 15,
+            itemBuilder: (context, index) => ListTile(
+                  title: Text(index.toString()),
+                )),
       ),
     );
   }
