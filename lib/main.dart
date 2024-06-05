@@ -15,29 +15,35 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       //debugShowCheckedModeBanner: false,
       home: Scaffold(
-        backgroundColor: Colors.yellow[50],
+        //   backgroundColor: Colors.yellow[50],
         appBar: AppBar(
           title: Text("Ez egy AppBar"),
-          backgroundColor: Colors.yellow[200],
+          backgroundColor: Colors.green[600],
           elevation: 0,
           leading: Icon(Icons.menu),
           actions: [IconButton(onPressed: () {}, icon: Icon(Icons.logout))],
         ),
-        body: Center(
-          child: Container(
-            height: 300,
-            width: 300,
-            decoration: BoxDecoration(
-              color: Colors.yellow[200],
-              //curve
-              borderRadius: BorderRadius.circular(20),
+        body: Column(
+          children: [
+            //1 box
+            Container(
+              height: 200,
+              width: 200,
+              color: Colors.green[300],
             ),
-            padding: EdgeInsets.all(25),
-            child: Icon(
-              Icons.home,
-              size: 45,
+            //2 box
+            Container(
+              height: 200,
+              width: 200,
+              color: Colors.green[200],
             ),
-          ),
+            //3 box
+            Container(
+              height: 200,
+              width: 200,
+              color: Colors.green[100],
+            ),
+          ],
         ),
       ),
     );
