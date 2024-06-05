@@ -4,13 +4,25 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  MyApp({super.key});
 
-  // List names = ["Narancs", "Banán", "Alma", "Cseresznye", "Citrom", "Kiwi", "Avokádó", "Ananász", "Mangó", "Lime", "Málna"];
+  List names = [
+    "Narancs",
+    "Banán",
+    "Alma",
+    "Cseresznye",
+    "Citrom",
+    "Kiwi",
+    "Avokádó",
+    "Ananász",
+    "Mangó",
+    "Lime",
+    "Málna"
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -26,9 +38,9 @@ class MyApp extends StatelessWidget {
           actions: [IconButton(onPressed: () {}, icon: Icon(Icons.logout))],
         ),
         body: ListView.builder(
-            itemCount: 15,
+            itemCount: names.length,
             itemBuilder: (context, index) => ListTile(
-                  title: Text(index.toString()),
+                  title: Text(names[index]),
                 )),
       ),
     );
