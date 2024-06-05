@@ -28,20 +28,17 @@ class MyApp extends StatelessWidget {
             //1 box
             Container(
               height: 200,
-              width: 200,
               color: Colors.green[300],
             ),
             //2 box
             Container(
               height: 200,
-              width: 200,
               color: Colors.green[200],
             ),
             //3 box
             Expanded(
               child: Container(
                 height: 200,
-                width: 200,
                 color: Colors.green[100],
               ),
             ),
