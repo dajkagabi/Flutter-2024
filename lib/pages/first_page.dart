@@ -25,13 +25,18 @@ class FirstPage extends StatelessWidget {
               leading: Icon(Icons.home),
               title: Text("K E Z D Ő L A P"),
               onTap: () {
-                //
+                //Ikonok navigáció
+                Navigator.pushNamed(context, '/homepage');
               },
             ),
             //Beállítás oldal
             ListTile(
               leading: Icon(Icons.settings),
               title: Text("B E Á L L Í T Á S"),
+              //Ikonok navigáció
+              onTap: () {
+                Navigator.pushNamed(context, '/settingspage');
+              },
             ),
           ],
         ),
