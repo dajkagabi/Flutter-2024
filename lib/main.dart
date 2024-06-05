@@ -23,24 +23,23 @@ class MyApp extends StatelessWidget {
           leading: Icon(Icons.menu),
           actions: [IconButton(onPressed: () {}, icon: Icon(Icons.logout))],
         ),
-        body: ListView(
-          scrollDirection: Axis.horizontal,
+        body: Row(
           children: [
             //1 box
             Container(
-              width: 350,
+              width: 260,
               color: Colors.green[300],
             ),
 
             //2 box
             Container(
-              width: 350,
+              width: 260,
               color: Colors.green[200],
             ),
 
             //3 box
             Container(
-              width: 350,
+              width: 260,
               color: Colors.green[100],
             ),
           ],
