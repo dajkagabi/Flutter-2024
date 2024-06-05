@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: prefer_const_constructors, prefer_const_constructors_in_immutables
 
 import 'package:flutter/material.dart';
 
@@ -8,6 +8,11 @@ void main() {
 
 class MyApp extends StatelessWidget {
   MyApp({super.key});
+
+  //Koppints rám! - függvény meghívása.
+  void userTapped() {
+    print("Felhasználó rá koppintott!");
+  }
 
   /* List names = [
     "Narancs",
@@ -28,37 +33,26 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-          //   backgroundColor: Colors.yellow[50],
-          appBar: AppBar(
-            title: Text("Ez egy AppBar"),
-            backgroundColor: Colors.green[200],
-            elevation: 0,
-            leading: Icon(Icons.menu),
-            actions: [IconButton(onPressed: () {}, icon: Icon(Icons.logout))],
+        //   backgroundColor: Colors.yellow[50],
+        appBar: AppBar(
+          title: Text("Ez egy AppBar"),
+          backgroundColor: Colors.green[200],
+          elevation: 0,
+          leading: Icon(Icons.menu),
+          actions: [IconButton(onPressed: () {}, icon: Icon(Icons.logout))],
+        ),
+        body: Center(
+          child: GestureDetector(
+            onTap: userTapped,
+            child: Container(
+              height: 200,
+              width: 200,
+              color: Colors.green[200],
+              child: Center(child: Text("Koppints rám!")),
+            ),
           ),
-          body: Stack(
-            alignment: Alignment.bottomRight,
-            children: [
-              //nagy box
-              Container(
-                height: 300,
-                width: 300,
-                color: Colors.green[900],
-              ),
-              //közepes box
-              Container(
-                height: 200,
-                width: 200,
-                color: Colors.green[800],
-              ),
-              //kis box
-              Container(
-                height: 100,
-                width: 100,
-                color: Colors.green[700],
-              ),
-            ],
-          )),
+        ),
+      ),
     );
   }
 }
