@@ -1,7 +1,6 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 void main() {
   runApp(MyApp());
@@ -10,7 +9,7 @@ void main() {
 class MyApp extends StatelessWidget {
   MyApp({super.key});
 
-  List names = [
+  /* List names = [
     "Narancs",
     "Banán",
     "Alma",
@@ -23,7 +22,7 @@ class MyApp extends StatelessWidget {
     "Lime",
     "Málna"
   ];
-
+*/
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -32,15 +31,18 @@ class MyApp extends StatelessWidget {
         //   backgroundColor: Colors.yellow[50],
         appBar: AppBar(
           title: Text("Ez egy AppBar"),
-          backgroundColor: Colors.green[600],
+          backgroundColor: Colors.green[200],
           elevation: 0,
           leading: Icon(Icons.menu),
           actions: [IconButton(onPressed: () {}, icon: Icon(Icons.logout))],
         ),
-        body: ListView.builder(
-            itemCount: names.length,
-            itemBuilder: (context, index) => ListTile(
-                  title: Text(names[index]),
+        body: GridView.builder(
+            itemCount: 64,
+            gridDelegate:
+                SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 8),
+            itemBuilder: (context, index) => Container(
+                  color: Colors.green,
+                  margin: EdgeInsets.all(2),
                 )),
       ),
     );
