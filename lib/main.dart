@@ -37,6 +37,7 @@ class MyApp extends StatelessWidget {
             actions: [IconButton(onPressed: () {}, icon: Icon(Icons.logout))],
           ),
           body: Stack(
+            alignment: Alignment.bottomRight,
             children: [
               //nagy box
               Container(
