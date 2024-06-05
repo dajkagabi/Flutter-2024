@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
 
@@ -9,16 +9,34 @@ class FirstPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text("Első oldal")),
-      //  drawer: Drawer(),
-      backgroundColor: Colors.green[200],
-      body: Center(
-        child: ElevatedButton(
-            child: Text("Tovább a második oldalra."),
-            onPressed: () {
-              //Navigáció
-              Navigator.pushNamed(context, '/secondpage');
-            }),
+      drawer: Drawer(
+        backgroundColor: Colors.green[100],
+        child: Column(
+          children: [
+            //
+            DrawerHeader(
+              child: Icon(
+                Icons.login,
+                size: 45,
+              ),
+            ),
+            //Kezdőlap lista
+            ListTile(
+              leading: Icon(Icons.home),
+              title: Text("K E Z D Ő L A P"),
+              onTap: () {
+                //
+              },
+            ),
+            //Beállítás oldal
+            ListTile(
+              leading: Icon(Icons.settings),
+              title: Text("B E Á L L Í T Á S"),
+            ),
+          ],
+        ),
       ),
+      backgroundColor: Colors.green[200],
     );
   }
 }
