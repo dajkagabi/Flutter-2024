@@ -38,10 +38,12 @@ class MyApp extends StatelessWidget {
               color: Colors.green[200],
             ),
             //3 box
-            Container(
-              height: 200,
-              width: 200,
-              color: Colors.green[100],
+            Expanded(
+              child: Container(
+                height: 200,
+                width: 200,
+                color: Colors.green[100],
+              ),
             ),
           ],
         ),
