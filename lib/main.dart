@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      //debugShowCheckedModeBanner: false,
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
         //   backgroundColor: Colors.yellow[50],
         appBar: AppBar(
@@ -26,17 +26,24 @@ class MyApp extends StatelessWidget {
         body: Column(
           children: [
             //1 box
-            Container(
-              height: 200,
-              color: Colors.green[300],
+            Expanded(
+              flex: 2,
+              child: Container(
+                height: 200,
+                color: Colors.green[300],
+              ),
             ),
             //2 box
-            Container(
-              height: 200,
-              color: Colors.green[200],
+            Expanded(
+              flex: 3,
+              child: Container(
+                height: 200,
+                color: Colors.green[200],
+              ),
             ),
             //3 box
             Expanded(
+              flex: 2,
               child: Container(
                 height: 200,
                 color: Colors.green[100],
