@@ -28,23 +28,36 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        //   backgroundColor: Colors.yellow[50],
-        appBar: AppBar(
-          title: Text("Ez egy AppBar"),
-          backgroundColor: Colors.green[200],
-          elevation: 0,
-          leading: Icon(Icons.menu),
-          actions: [IconButton(onPressed: () {}, icon: Icon(Icons.logout))],
-        ),
-        body: GridView.builder(
-            itemCount: 64,
-            gridDelegate:
-                SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 8),
-            itemBuilder: (context, index) => Container(
-                  color: Colors.green,
-                  margin: EdgeInsets.all(2),
-                )),
-      ),
+          //   backgroundColor: Colors.yellow[50],
+          appBar: AppBar(
+            title: Text("Ez egy AppBar"),
+            backgroundColor: Colors.green[200],
+            elevation: 0,
+            leading: Icon(Icons.menu),
+            actions: [IconButton(onPressed: () {}, icon: Icon(Icons.logout))],
+          ),
+          body: Stack(
+            children: [
+              //nagy box
+              Container(
+                height: 300,
+                width: 300,
+                color: Colors.green[900],
+              ),
+              //közepes box
+              Container(
+                height: 200,
+                width: 200,
+                color: Colors.green[800],
+              ),
+              //kis box
+              Container(
+                height: 100,
+                width: 100,
+                color: Colors.green[700],
+              ),
+            ],
+          )),
     );
   }
 }
