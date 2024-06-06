@@ -1,21 +1,52 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, prefer_const_constructors_in_immutables
 
+import 'package:base_2024/pages/home_page.dart';
+import 'package:base_2024/pages/profile_page.dart';
+import 'package:base_2024/pages/settings_page.dart';
 import 'package:flutter/material.dart';
 
-class FirstPage extends StatelessWidget {
-  const FirstPage({super.key});
+class FirstPage extends StatefulWidget {
+  FirstPage({super.key});
+
+  @override
+  State<FirstPage> createState() => _FirstPageState();
+}
+
+class _FirstPageState extends State<FirstPage> {
+  //Indexelés
+  int _selectedIndex = 0;
+
+  //State
+  void _navigateBottomBAr(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+  }
+
+  final List _pages = [
+    //Kezdőlap
+    HomePage(),
+    //Profil
+    ProfilePage(),
+
+    //Beállítások
+    SettingsPage(),
+  ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text("Első oldal")),
+      body: _pages[_selectedIndex],
       //Alsó navigációs sáv
       bottomNavigationBar: BottomNavigationBar(
+        currentIndex: _selectedIndex,
+        onTap: _navigateBottomBAr,
         items: [
           //Főoldal
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
-            label: 'Főoldal',
+            label: 'Kezdőlap',
           ),
           //Profil
           BottomNavigationBarItem(
@@ -42,7 +73,7 @@ class FirstPage extends StatelessWidget {
                 size: 45,
               ),
             ),
-            //Kezdőlap lista
+            //Főoldal lista
             ListTile(
               leading: Icon(Icons.home),
               title: Text("K E Z D Ő L A P"),
