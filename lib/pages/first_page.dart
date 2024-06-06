@@ -9,11 +9,33 @@ class FirstPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text("Első oldal")),
-      drawer: Drawer(
+      //Alsó navigációs sáv
+      bottomNavigationBar: BottomNavigationBar(
+        items: [
+          //Főoldal
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            label: 'Főoldal',
+          ),
+          //Profil
+          BottomNavigationBarItem(
+            icon: Icon(Icons.person),
+            label: 'Profil',
+          ),
+          //Beállítások
+          BottomNavigationBarItem(
+            icon: Icon(Icons.settings),
+            label: 'Beállítások',
+          ),
+        ],
+      ),
+
+      //Oldalsó navigációs sáv
+      /*Drawer(
         backgroundColor: Colors.green[100],
         child: Column(
           children: [
-            //
+            //DrawerHeader
             DrawerHeader(
               child: Icon(
                 Icons.login,
@@ -25,6 +47,8 @@ class FirstPage extends StatelessWidget {
               leading: Icon(Icons.home),
               title: Text("K E Z D Ő L A P"),
               onTap: () {
+                //Pop
+                Navigator.pop(context);
                 //Ikonok navigáció
                 Navigator.pushNamed(context, '/homepage');
               },
@@ -40,8 +64,8 @@ class FirstPage extends StatelessWidget {
             ),
           ],
         ),
-      ),
-      backgroundColor: Colors.green[200],
+      ), 
+      backgroundColor: Colors.green[200], */
     );
   }
 }
