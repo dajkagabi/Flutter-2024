@@ -8,8 +8,8 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text("Főoldal"),
+      body: Center(
+        child: Text("Kezdőlap"),
       ),
     );
   }
